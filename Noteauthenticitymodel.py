@@ -20,12 +20,11 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split # Splitting data
 
 # to import models
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
+
 
 # To evaluate model accuracy
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix
 
 
 # In[51]:
@@ -106,22 +105,25 @@ prediction
 acc_score=accuracy_score(y_test,prediction)
 print('Accuracy of RFC model is :',acc_score )
 
+cm= confusion_matrix(y_test,prediction)
+sns.heatmap(cm, annot=True)
+
 
 # In[57]:
 
 
 ### Create a Pickle file using serialization 
-import pickle
-pickle_out = open("rfcmodel.pkl","wb")
-pickle.dump(rfc_model, pickle_out)
-pickle_out.close()
+# import pickle
+# pickle_out = open("rfcmodel.pkl","wb")
+# pickle.dump(rfc_model, pickle_out)
+# pickle_out.close()
 
 
 # In[39]:
 
 
-result = rfc_model.predict([[0,1,0,1]])
-print ("Note authenticity :", result)
+# result = rfc_model.predict([[0,1,0,1]])
+# print ("Note authenticity :", result)
 
 
 
