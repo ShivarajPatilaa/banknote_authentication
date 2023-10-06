@@ -124,7 +124,6 @@ result = rfc_model.predict([[0,1,0,1]])
 print ("Note authenticity :", result)
 
 
-# In[ ]:
 
 
 
